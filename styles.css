@@ -1,0 +1,296 @@
+/* Estilos base */
+body {
+  background: linear-gradient(to bottom right, #28a745, #ffd700);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Navbar principal */
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.banner {
+ 
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color:#ddd
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container iframe {
+  width: 480px;
+  height: 270px;
+  border-radius: 8px;
+}
+
+
+
+/* Contenedores de productos y reseñas */
+#productos,
+#reseñas {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#productos > div,
+#reseñas > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Estrellas */
+.estrellas {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.estrellas .llena {
+  color: gold;
+}
+
+.estrellas .vacia {
+  color: lightgray;
+}
+
+/* Formulario de contacto */
+.contacto-container {
+  padding: 100px 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contacto-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contacto-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form textarea {
+  height: 90px;
+}
+
+form button {
+  background-color: #333;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* ============================ */
+/* Footer exclusivo y aislado   */
+/* ============================ */
+
+.footer {
+  background-color: #222;
+  color: #f4f0f0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-left,
+.footer-right {
+  
+  margin: 10px;
+}
+
+.footer h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Opcional: alinea a la izquierda */
+}
+
+.social-icons a {
+  color: #ec0b0b;
+  text-decoration: none;
+  margin-bottom: 10px; /* Espacio entre los íconos */
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #e1f503;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 8px;
+}
+
+.footer-menu a {
+  color: #f20202;
+  text-decoration: none;
+  text-align: right;
+}
+
+.footer-menu a:hover {
+  color: #f1de0a;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ============================ */
+/* Media Queries (Responsive)   */
+/* ============================ */
+
+@media (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .social-icons,
+  footer nav .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .redes_h3 h3 {
+    text-align: center;
+  }
+
+  #productos > div,
+  #reseñas > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  #productos > div,
+  #reseñas > div {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Responsivo para tablet y celular */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2em;
+  }
+
+  .banner p {
+    font-size: 1em;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
