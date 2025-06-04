@@ -39,14 +39,23 @@
           <a class="nav-link" href="#" id="carritoNav">
             <i class="bi bi-cart"></i> <span id="cartCount">0</span>
           </a>
-          <div id="resumenCarrito" class="hidden resumen-tarjeta">
-            <h3>Resumen de compra</h3>
-            <div id="listaProductos"></div>
-            <p id="subtotal"></p>
-            <p id="iva"></p>
-            <p id="total"></p>
-            <button onclick="cerrarResumen()">Cerrar</button>
-          </div>
+          <!-- Card de resumen de compra moderna -->
+<div id="resumenCarrito" class="hidden resumen-tarjeta">
+  <button class="btn-cerrar" onclick="cerrarResumen()" title="Cerrar carrito">
+    <i class="bi bi-x-lg"></i>
+  </button>
+  <div class="resumen-header">
+    <span class="resumen-icon"><i class="bi bi-bag-check"></i></span>
+    <h3>Resumen de compra</h3>
+  </div>
+  <div id="listaProductos"></div>
+  <div class="resumen-totales">
+    <p id="subtotal"></p>
+    <p id="iva"></p>
+    <p id="total"></p>
+  </div>
+  <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+</div>
         </li>
       </ul>
     </div>

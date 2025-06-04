@@ -152,3 +152,8 @@ function mostrarMensajeEnCardModal(btn) {
     mensaje.remove();
   }, 2500);
 }
+function finalizarCompra() {
+  alert('¡Gracias por tu compra! ');
+  // Aquí puedes limpiar el carrito, cerrar el resumen, etc.
+  cerrarResumen();
+}
