@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle</title>
+  <link rel="stylesheet" href="detalle.css" />
+</head>
+<body>
+  <!-- Botón del carrito -->
+  <header>
+    <button id="btnCarrito" class="carrito">
+      🛒 Carrito (<span id="contadorCarrito">0</span>)
+    </button>
+  </header>
+
+  <!-- Producto -->
+  <div class="producto">
+    <img src="img/carrusel1.jpg" alt="SPIDER-MAN 2" onclick="abrirModal('SPIDER-MAN 2', 'img/carrusel1.jpg')">
+    <p class="titulo">SPIDER-MAN 2</p>
+    <p class="precio">$2300</p>
+    <button onclick="abrirModal('SPIDER-MAN 2', 'img/spiderman2.jpg')">agregar al carrito</button>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <img id="modalImage" src="" alt="Producto" />
+      <h2 id="modalName"></h2>
+      <p id="modalPrice" class="price"></p>
+      <div id="modalDescription" class="description scrollable"></div>
+      <button class="add-to-cart-btn">Agregar al Carrito</button>
+    </div>
+  </div>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+</body>
+</html>

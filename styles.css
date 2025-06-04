@@ -1,4 +1,7 @@
 /* Estilos base */
+/* ============================ */
+/*        ESTILOS BASE          */
+/* ============================ */
 body {
   background: linear-gradient(to bottom right, #28a745, #ffd700);
   font-family: Arial, sans-serif;
@@ -16,7 +19,9 @@ main {
   gap: 2rem;
 }
 
-/* Navbar principal */
+/* ============================ */
+/*        NAVBAR PRINCIPAL      */
+/* ============================ */
 .navbar {
   background-color: #343a40;
 }
@@ -29,22 +34,10 @@ main {
   color: #ffd700;
 }
 
-/* Cards */
-.card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-
-
+/* ============================ */
+/*        BANNER                */
+/* ============================ */
 .banner {
- 
   padding: 40px 20px;
   text-align: center;
   border-radius: 10px;
@@ -55,7 +48,7 @@ main {
 .banner h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color:#ddd
+  color: #ddd;
 }
 
 .banner p {
@@ -76,23 +69,211 @@ main {
   border-radius: 8px;
 }
 
+/* ============================ */
+/*        CARDS DE PRODUCTO     */
+/* ============================ */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-/* Contenedores de productos y reseñas */
-#productos,
-#reseñas {
+/* ============================ */
+/*        MODAL DE PRODUCTO     */
+/* ============================ */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#modalName {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#modalImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ============================ */
+/*        BOTONES Y PRECIOS     */
+/* ============================ */
+.price {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.add-to-cart-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============================ */
+/*        DESCRIPCIÓN           */
+/* ============================ */
+.description.scrollable {
+  max-height: 100px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.scrollable {
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 1rem 0;
+}
+
+/* ============================ */
+/*        CLASES GENERALES      */
+/* ============================ */
+.hidden {
+  display: none !important;
+}
+
+/* ============================ */
+/* TARJETA BLANCA RESUMEN COMPRA*/
+/* ============================ */
+.resumen-tarjeta {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  padding: 24px 20px 16px 20px;
+  margin-top: 12px;
+  min-width: 320px;
+  max-width: 400px;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  z-index: 300;
+}
+
+/* ============================ */
+/* CONTENEDORES DE PRODUCTOS Y RESEÑAS */
+/* ============================ */
+#productos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#productos > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
   max-width: 900px;
   margin: 0 auto;
 }
 
-#productos > div,
 #reseñas > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Estrellas */
+/* ============================ */
+/* TARJETAS DE RESEÑAS          */
+/* ============================ */
+#reseñas .card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+#reseñas .card-img-top {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+}
+
+#reseñas .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+#reseñas .estrellas {
+  font-size: 1.2rem;
+  color: #f5c518; /* color dorado para estrellas */
+  margin-bottom: 0.5rem;
+}
+
+/* ============================ */
+/* ESTRELLAS DE RESEÑAS         */
+/* ============================ */
 .estrellas {
   font-size: 1.2rem;
   color: gray;
@@ -106,7 +287,9 @@ main {
   color: lightgray;
 }
 
-/* Formulario de contacto */
+/* ============================ */
+/* FORMULARIO DE CONTACTO       */
+/* ============================ */
 .contacto-container {
   padding: 100px 20px;
   margin-top: 50px;
@@ -170,9 +353,8 @@ form button:hover {
 }
 
 /* ============================ */
-/* Footer exclusivo y aislado   */
+/* FOOTER                       */
 /* ============================ */
-
 .footer {
   background-color: #222;
   color: #f4f0f0;
@@ -188,7 +370,6 @@ form button:hover {
 
 .footer-left,
 .footer-right {
-  
   margin: 10px;
 }
 
@@ -200,13 +381,13 @@ form button:hover {
 .social-icons {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Opcional: alinea a la izquierda */
+  align-items: flex-start;
 }
 
 .social-icons a {
   color: #ec0b0b;
   text-decoration: none;
-  margin-bottom: 10px; /* Espacio entre los íconos */
+  margin-bottom: 10px;
   font-size: 18px;
 }
 
@@ -243,9 +424,8 @@ form button:hover {
 }
 
 /* ============================ */
-/* Media Queries (Responsive)   */
+/* MEDIA QUERIES (RESPONSIVE)   */
 /* ============================ */
-
 @media (max-width: 768px) {
   footer .footer-content {
     flex-direction: column;
@@ -278,7 +458,6 @@ form button:hover {
   }
 }
 
-/* Responsivo para tablet y celular */
 @media (max-width: 768px) {
   .banner h1 {
     font-size: 2em;
