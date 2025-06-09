@@ -22,17 +22,50 @@ main {
 /* ============================ */
 /*        NAVBAR PRINCIPAL      */
 /* ============================ */
+
+
 .navbar {
-  background-color: #343a40;
+  background-color: #f6f4f4;
 }
 
 .navbar-nav .nav-link {
-  color: #fff;
+  color: #0a0a0a;
 }
 
 .navbar-nav .nav-link:hover {
   color: #ffd700;
 }
+
+/* Estilo para la marca con logo y texto alineados */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding-left: 0; /* Sin espacio a la izquierda */
+  color: black !important;
+}
+/* Tamaño y margen del logo dentro de la navbar */
+.navbar-brand img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  width: auto;
+  margin-right: 10px; /* Separación entre logo y texto */
+}
+
+.navbar-brand:hover {
+  color: #ffd700;
+  
+}
+
+.navbar-toggler {
+  border: 2px solid black;  /* ✅ Borde negro */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+
 
 /* ============================ */
 /*        BANNER                */
