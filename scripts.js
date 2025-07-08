@@ -233,3 +233,58 @@ window.eliminarDelCarrito = eliminarDelCarrito;
 window.cerrarModal = cerrarModal;
 window.finalizarCompra = finalizarCompra;
 window.agregarAlCarritoModal = agregarAlCarritoModal;
+
+/* ============================ */
+/*        CARRUSEL BANNER       */
+/* ============================ */
+const carouselInner = document.querySelector('.carousel-inner');
+const carouselItems = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+function showSlide(index) {
+  if (index < 0) {
+    currentIndex = carouselItems.length - 1; // Ir al último slide si se pasa del inicio
+  } else if (index >= carouselItems.length) {
+    currentIndex = 0; // Ir al primer slide si se pasa del final
+  } else {
+    currentIndex = index;
+  }
+
+  const offset = -currentIndex * 100; // Calcular el desplazamiento para mostrar el slide correcto
+  carouselInner.style.transform = `translateX(${offset}%)`;
+
+  // Opcional: Actualizar clases 'active' si las usas para estilos o indicadores
+  carouselItems.forEach((item, i) => {
+    if (i === currentIndex) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+// Funciones para botones de navegación (si los añades en HTML)
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+
+// Inicializar el carrusel (mostrar el primer slide al cargar la página)
+showSlide(0);
+
+// (Opcional) Auto-reproducción:
+// setInterval(nextSlide, 5000); // Cambiar de slide cada 5 segundos
+/* ============================ */
+/*        INICIALIZACIÓN DEL CARRUSEL AL CARGAR EL DOM */
+/* ============================ */
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselBanner = document.querySelector('.carousel-banner');
+  if (carouselBanner) {
+    // Llamar a la función showSlide(0) que ya existe
+    showSlide(0);
+  }
+});
+

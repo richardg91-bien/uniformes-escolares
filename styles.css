@@ -30,6 +30,7 @@ main {
   background-color: #ffffff;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative; /* Añadir posicionamiento relativo para el menú absoluto */
 }
 .navbar-nav .nav-link:hover {
   color: #ffd700;
@@ -68,7 +69,7 @@ main {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3Csvg%3E");
 }
 .navbar-menu {
   display: flex;
@@ -106,42 +107,107 @@ main {
 
 
 /* ============================ */
-/*        BANNER                */
+/*        CARRUSEL BANNER       */
 /* ============================ */
-.banner {
-  background: linear-gradient(120deg, #f8fafc 60%, #e0e7ef 100%);
-  padding: 60px 20px 40px 20px;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+/* ============================ */
+/*        CARRUSEL BANNER       */
+/* ============================ */
+.carousel-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 60px;
+  /* Definir altura relativa a la ventana */
+  height: 70vh; /* Ejemplo: 70% de la altura de la ventana */
+}
+
+/* ... el resto de estilos del carrusel ... */
+
+
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Transición para el cambio de slide */
+}
+
+.carousel-item {
+  min-width: 100%; /* Cada slide ocupa el 100% del ancho del carrusel */
+  position: relative;
+}
+
+.carousel-item img,
+.carousel-item video {
+  display: block;
+  width: 100%;
+  height: auto; /* O height: 100vh; para que ocupe toda la altura de la ventana */
+  object-fit: cover; /* Asegura que la imagen o video cubra el área */
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px; /* Posicionar el texto en la parte inferior */
+  left: 50%;
+  transform: translateX(-50%); /* Centrar horizontalmente */
+  color: #fff; /* Color del texto */
   text-align: center;
-  margin: 150px auto 32px auto; /* aquí */
-  max-width: 900px;
+  z-index: 1; /* Asegurar que el texto esté por encima de la imagen/video */
 }
 
 
-.banner h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 2.8rem;
-  color: #2563eb;
-  margin-bottom: 12px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-.banner p {
-  color: #64748b;
-  font-size: 1.2rem;
-  margin-bottom: 24px;
+
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.video-container iframe {
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(37,99,235,0.08);
-  max-width: 100%;
+/* Estilos para los controles de navegación del carrusel */
+.carousel-control {
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para centrado vertical */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  color: white; /* Color de las flechas */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2; /* Asegurar que estén por encima de los slides y el caption */
+  font-size: 24px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
+}
+
+.carousel-control.prev {
+  left: 10px; /* Posicionar a la izquierda */
+}
+
+.carousel-control.next {
+  right: 10px; /* Posicionar a la derecha */
+}
+
+/* ... resto de secciones de CSS ... */
+
 
 /* ============================ */
 /*        CARDS DE PRODUCTO     */
 /* ============================ */
+#productos h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Espacio entre el subtítulo y la cuadrícula de productos */
+  color: #333; /* Color del texto */
+  font-size: 2em; /* Tamaño de la fuente */
+}
+
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -155,8 +221,9 @@ main {
   box-shadow: 0 2px 12px rgba(37,99,235,0.08);
   display: flex;
   flex-direction: column;
-  /* height: 240px;  <-- Elimina esta línea */
-  /* max-width: 200px; <-- Elimina esta línea */
+  /* Centrar contenido vertical y horizontalmente */
+  justify-content: center; /* Centra verticalmente en una columna */
+  align-items: center; /* Centra horizontalmente en una columna */
   margin: 0 auto;
   transition: transform 0.15s, box-shadow 0.15s;
   position: relative;
@@ -174,6 +241,7 @@ main {
   height: 160px;      /* Más grande que antes */
   width: 100%;
   background: #f8fafc;
+  margin-top: 10px; /* Añadir margen superior para bajar la imagen */
 }
 .card-body {
   padding: 0.7rem;
@@ -238,8 +306,8 @@ main {
   background: #fff;
   padding: 24px 20px;
   border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
+  max-width: 300px;
+  width: 80%;
   position: relative;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   text-align: center;
@@ -325,11 +393,11 @@ main {
   top: 60px;
   right: 0;
   z-index: 1001;
-  display: none;
+  display: none; /* Ocultar por defecto */
 }
 
 .resumen-tarjeta:not(.hidden) {
-  display: block;
+  display: block; /* Mostrar cuando no tenga la clase 'hidden' */
 }
 
 .resumen-header {
@@ -596,7 +664,7 @@ main {
   }
 }
 @media (max-width: 768px) {
-  .navbar-toggler {
+  .nav-toggle {
     display: block;
   }
 
@@ -605,11 +673,40 @@ main {
     align-items: flex-start;
     width: 100%;
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    z-index: 999;
   }
 
-  .navbar-menu.show {
+  .navbar-menu.open {
     display: flex;
   }
+
+  .navbar-menu .close-menu {
+     display: block;
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     background: transparent;
+     border: none;
+     font-size: 24px;
+     color: #333;
+     cursor: pointer;
+     z-index: 1000;
+  }
+}
+
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none;
+    }
+    .close-menu { /* Ocultar el botón de cierre en escritorio */
+        display: none;
+    }
 }
 
 @media (max-width: 991px) {

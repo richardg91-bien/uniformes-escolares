@@ -61,17 +61,36 @@
     </div>
   </nav>
 
-  <!-- BANNER -->
-  <div class="banner">
+<!-- CARRUSEL BANNER -->
+  <section class="carousel-banner">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="/videos/7775762-uhd_4096_2160_25fps.webm" type="video/webm">
+      <source src="/videos/7775762-uhd_4096_2160_25fps (1).mp4" type="video/mp4">
+      <!-- Mensaje para navegadores que no soportan video -->
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+  <div class="carousel-caption">
     <h1>Bienvenido a Uniformes Creativos</h1>
     <p>Diseña y personaliza tus uniformes con estilo profesional.</p>
-    <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V-A8_svqz_s?si=RSI5AcnS_IRalDJ0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
+</div>
+
+      </div>
+      
+      
+
+      <!-- Controles de navegación del carrusel -->
+      <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button> <!-- Botón anterior -->
+      <button class="carousel-control next" onclick="nextSlide()">&#10095;</button> <!-- Botón siguiente -->
+    </section> <!-- Esta es la etiqueta de cierre correcta para toda la sección -->
 
   <!-- PRODUCTOS -->
   <section id="productos" class="container my-5">
+    <h2>Productos</h2> <!-- Añadido nuevamente -->
     <div class="productos-grid">
       <!-- Repetimos el mismo producto 6 veces -->
       <div class="card">
