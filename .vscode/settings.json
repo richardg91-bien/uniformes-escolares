@@ -155,5 +155,6 @@
         "unitario",
         "vacia",
         "vacío"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

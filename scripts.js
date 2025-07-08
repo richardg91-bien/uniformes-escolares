@@ -1,56 +1,118 @@
 /* ============================ */
 /*        VARIABLES GLOBALES    */
 /* ============================ */
-const carrito = [];
-const cartCount = document.getElementById('cartCount');
+let carrito = [];
+let productos = [];
+const carritoNav = document.getElementById('carritoNav');
 const resumenCarritoDiv = document.getElementById("resumenCarrito");
 const listaProductosDiv = document.getElementById('listaProductos');
 const subtotalP = document.getElementById('subtotal');
 const ivaP = document.getElementById('iva');
 const totalP = document.getElementById('total');
+const productosGrid = document.querySelector('.productos-grid');
+
+/* ============================ */
+/*        PERSISTENCIA          */
+/* ============================ */
+// Cargar carrito desde localStorage al iniciar
+const carritoGuardado = localStorage.getItem('carrito');
+if (carritoGuardado) {
+  carrito = JSON.parse(carritoGuardado);
+  actualizarContador();
+}
+
+/* ============================ */
+/*        FETCH PRODUCTOS       */
+/* ============================ */
+// Simula una API local, puedes cambiar la URL por una real si tienes endpoint
+fetch('productos.json')
+  .then(res => res.json())
+  .then(data => {
+    productos = data;
+    renderizarProductos();
+  })
+  .catch(() => {
+    // Fallback si no hay productos.json
+    productos = [
+      {
+        id: 1,
+        nombre: "SPIDER-MAN 2",
+        precio: 2300,
+        imagen: "img/carrusel1.jpg",
+        descripcion: "Uniforme edición especial Spider-Man 2"
+      },
+      {
+        id: 2,
+        nombre: "BATMAN",
+        precio: 2100,
+        imagen: "img/carrusel1.jpg",
+        descripcion: "Uniforme edición especial Batman"
+      }
+    ];
+    renderizarProductos();
+  });
+
+function renderizarProductos() {
+  if (!productosGrid) return;
+  productosGrid.innerHTML = '';
+  productos.forEach(prod => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${prod.imagen}" class="card-img-top" alt="${prod.nombre}">
+      <div class="card-body">
+        <h5 class="card-title">${prod.nombre}</h5>
+        <p class="card-text">$${prod.precio}</p>
+        <button class="btn btn-primary" onclick="abrirModalDesdeAPI(${prod.id})">Agregar al Carrito</button>
+        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
+      </div>
+    `;
+    productosGrid.appendChild(card);
+  });
+}
 
 /* ============================ */
 /*        MODAL DE PRODUCTO     */
 /* ============================ */
-// Abrir modal con la información de la tarjeta seleccionada
-function abrirModal(btn) {
-  const card = btn.closest('.card');
-  const nombre = card.querySelector('.card-title').textContent;
-  const precio = card.querySelector('.card-text').textContent;
-  const imgSrc = card.querySelector('img').src;
-  const descripcion = "Descripción corta o más info aquí";
-
-  document.getElementById('modalName').textContent = nombre;
-  document.getElementById('modalPrice').textContent = precio;
-  document.getElementById('modalImage').src = imgSrc;
-  document.getElementById('modalDescription').textContent = descripcion;
-
+function abrirModalDesdeAPI(id) {
+  const prod = productos.find(p => p.id === id);
+  if (!prod) return;
+  document.getElementById('modalName').textContent = prod.nombre;
+  document.getElementById('modalPrice').textContent = `$${prod.precio}`;
+  document.getElementById('modalImage').src = prod.imagen;
+  document.getElementById('modalDescription').textContent = prod.descripcion || '';
+  document.getElementById('productModal').setAttribute('data-id', prod.id);
   const modal = document.getElementById('productModal');
   modal.classList.remove('hidden');
   modal.style.display = "block";
 }
 
-// Cerrar el modal
 function cerrarModal() {
   const modal = document.getElementById("productModal");
   if (modal) {
     modal.classList.add('hidden');
     modal.style.display = "none";
-  } else {
-    console.error("El modal no se encontró en el DOM.");
   }
 }
 
 /* ============================ */
 /*        CARRITO DE COMPRAS    */
 /* ============================ */
-// Agregar producto al carrito desde el modal
 function agregarAlCarritoModal() {
-  const nombre = document.getElementById('modalName').textContent;
-  const precio = document.getElementById('modalPrice').textContent;
+  const id = parseInt(document.getElementById('productModal').getAttribute('data-id'));
+  const prod = productos.find(p => p.id === id);
+  if (!prod) return;
 
-  carrito.push({ name: nombre, price: precio });
+  // Si ya está en el carrito, suma cantidad
+  const item = carrito.find(p => p.id === id);
+  if (item) {
+    item.cantidad += 1;
+  } else {
+    carrito.push({ id: prod.id, nombre: prod.nombre, precio: prod.precio, cantidad: 1 });
+  }
+  guardarCarrito();
   actualizarContador();
+  actualizarResumenCarrito();
 
   const mensaje = document.getElementById('mensajeCarrito');
   if (mensaje) {
@@ -61,14 +123,17 @@ function agregarAlCarritoModal() {
   }
 }
 
-// Actualizar el contador del carrito
+function guardarCarrito() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
 function actualizarContador() {
   if (cartCount) {
-    cartCount.textContent = carrito.length;
+    let total = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+    cartCount.textContent = total;
   }
 }
 
-// Mostrar el resumen del carrito
 function mostrarResumenCarrito() {
   if (carrito.length === 0) {
     alert('El carrito está vacío');
@@ -79,24 +144,25 @@ function mostrarResumenCarrito() {
   resumenCarritoDiv.style.display = "block";
   listaProductosDiv.innerHTML = '';
 
-  const conteoProductos = {};
-  carrito.forEach(prod => {
-    if (!conteoProductos[prod.name]) {
-      conteoProductos[prod.name] = { cantidad: 0, price: prod.price };
-    }
-    conteoProductos[prod.name].cantidad++;
-  });
-
   let subtotal = 0;
-  for (const [nombre, data] of Object.entries(conteoProductos)) {
-    let precioNum = parseFloat(data.price.replace(/[^0-9.,]/g, '').replace(',', '.'));
-    let totalProducto = precioNum * data.cantidad;
+  carrito.forEach((prod, idx) => {
+    let totalProducto = prod.precio * prod.cantidad;
     subtotal += totalProducto;
 
     const prodDiv = document.createElement('div');
-    prodDiv.textContent = `${nombre} - Cantidad: ${data.cantidad} - Precio unitario: $${precioNum.toFixed(2)} - Total: $${totalProducto.toFixed(2)}`;
+    prodDiv.innerHTML = `
+      <span>${prod.nombre} - </span>
+      <span>Cantidad: 
+        <button onclick="cambiarCantidad(${prod.id}, -1)">-</button>
+        <span>${prod.cantidad}</span>
+        <button onclick="cambiarCantidad(${prod.id}, 1)">+</button>
+      </span>
+      <span> - Precio unitario: $${prod.precio.toFixed(2)}</span>
+      <span> - Total: $${totalProducto.toFixed(2)}</span>
+      <button onclick="eliminarDelCarrito(${prod.id})" style="color:red; margin-left:10px;">Eliminar</button>
+    `;
     listaProductosDiv.appendChild(prodDiv);
-  }
+  });
 
   const iva = subtotal * 0.21;
   const totalConIva = subtotal + iva;
@@ -106,7 +172,33 @@ function mostrarResumenCarrito() {
   totalP.textContent = `Total con IVA: $${totalConIva.toFixed(2)}`;
 }
 
-// Cerrar el resumen del carrito
+function cambiarCantidad(id, cambio) {
+  const item = carrito.find(p => p.id === id);
+  if (!item) return;
+  item.cantidad += cambio;
+  if (item.cantidad < 1) item.cantidad = 1;
+  guardarCarrito();
+  actualizarContador();
+  actualizarResumenCarrito();
+}
+
+function eliminarDelCarrito(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  guardarCarrito();
+  actualizarContador();
+  actualizarResumenCarrito();
+}
+
+/* ============================ */
+/*        RESUMEN Y EVENTOS     */
+/* ============================ */
+function actualizarResumenCarrito() {
+  // Solo actualiza si el resumen está abierto
+  if (resumenCarritoDiv && resumenCarritoDiv.style.display === "block") {
+    mostrarResumenCarrito();
+  }
+}
+
 function cerrarResumen() {
   resumenCarritoDiv.classList.add('hidden');
   resumenCarritoDiv.style.display = "none";
@@ -115,45 +207,29 @@ function cerrarResumen() {
 /* ============================ */
 /*        EVENTOS               */
 /* ============================ */
-// Evento para abrir el resumen al hacer clic en el icono del carrito
-if (cartCount) {
-  cartCount.style.cursor = 'pointer';
-  cartCount.addEventListener('click', () => {
+if (carritoNav) {
+  carritoNav.style.cursor = 'pointer';
+  carritoNav.addEventListener('click', () => {
     mostrarResumenCarrito();
   });
 }
 
 /* ============================ */
-/*        MENSAJE EN CARD       */
+/*        FINALIZAR COMPRA      */
 /* ============================ */
-// Mostrar mensaje en la tarjeta al agregar producto (opcional)
-function mostrarMensajeEnCardModal(btn) {
-  const card = btn.closest('.card');
-  if (!card) {
-    console.error("No se encontró la tarjeta asociada al botón.");
-    return;
-  }
-  const mensaje = document.createElement('div');
-  mensaje.textContent = "Producto agregado al carrito";
-  mensaje.style.position = 'absolute';
-  mensaje.style.top = '50%';
-  mensaje.style.left = '50%';
-  mensaje.style.transform = 'translate(-50%, -50%)';
-  mensaje.style.backgroundColor = 'rgba(0, 128, 0, 0.9)';
-  mensaje.style.color = 'white';
-  mensaje.style.padding = '10px 15px';
-  mensaje.style.borderRadius = '10px';
-  mensaje.style.zIndex = '10';
-  mensaje.style.fontWeight = 'bold';
-  mensaje.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
-  card.style.position = 'relative';
-  card.appendChild(mensaje);
-  setTimeout(() => {
-    mensaje.remove();
-  }, 2500);
-}
 function finalizarCompra() {
   alert('¡Gracias por tu compra! ');
-  // Aquí puedes limpiar el carrito, cerrar el resumen, etc.
+  carrito = [];
+  guardarCarrito();
+  actualizarContador();
+  actualizarResumenCarrito();
   cerrarResumen();
 }
+
+// Exponer funciones globales para los botones generados dinámicamente
+window.abrirModalDesdeAPI = abrirModalDesdeAPI;
+window.cambiarCantidad = cambiarCantidad;
+window.eliminarDelCarrito = eliminarDelCarrito;
+window.cerrarModal = cerrarModal;
+window.finalizarCompra = finalizarCompra;
+window.agregarAlCarritoModal = agregarAlCarritoModal;

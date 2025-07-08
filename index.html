@@ -5,305 +5,242 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Uniformes personalizados escolares, deportivos, médicos y más. Calidad y estilo.">
   <meta name="author" content="RICHARDG91">
-    <link rel="icon" href="/img/favicon.ico">
-
+  <link rel="icon" href="/img/favicon.ico">
   <title>Uniformes Escolares</title>
-  <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-    <!-- Iconos -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/eef76431bc.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> 
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/eef76431bc.js" crossorigin="anonymous"></script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" href="#"><img src="/img/logo1.jpeg" alt="Logo" style="height: 30px; width: auto; margin-right: 8px;">Uniformes</a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menú de navegación">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#reseñas">Reseñas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        <li class="nav-item position-relative" style="z-index: 200;">
-          <a class="nav-link" href="#" id="carritoNav">
-            <i class="bi bi-cart"></i> <span id="cartCount">0</span>
-          </a>
-          <!-- Card de resumen de compra moderna -->
-<div id="resumenCarrito" class="hidden resumen-tarjeta">
-  <button class="btn-cerrar" onclick="cerrarResumen()" title="Cerrar carrito">
-    <i class="bi bi-x-lg"></i>
-  </button>
-  <div class="resumen-header">
-    <span class="resumen-icon"><i class="bi bi-bag-check"></i></span>
-    <h3>Resumen de compra</h3>
-  </div>
-  <div id="listaProductos"></div>
-  <div class="resumen-totales">
-    <p id="subtotal"></p>
-    <p id="iva"></p>
-    <p id="total"></p>
-  </div>
-  <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
-</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Banner -->
-<div class="banner">
-  <h1>Bienvenido a Uniformes Creativos</h1>
-  <p>Diseña y personaliza tus uniformes con estilo profesional.</p>
-  <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V-A8_svqz_s?si=RSI5AcnS_IRalDJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </div>
-</div>
-
-<!-- Sección de Productos -->
-<section id="productos" class="container my-5">
-  <div class="productos-grid">
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-        <h5 class="card-title">SPIDER-MAN 2</h5>
-        <p class="card-text">$2300</p>
-        <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-        <h5 class="card-title">SPIDER-MAN 2</h5>
-        <p class="card-text">$2300</p>
-        <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-        <h5 class="card-title">SPIDER-MAN 2</h5>
-        <p class="card-text">$2300</p>
-        <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-        <h5 class="card-title">SPIDER-MAN 2</h5>
-        <p class="card-text">$2300</p>
-        <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-        <h5 class="card-title">SPIDER-MAN 2</h5>
-        <p class="card-text">$2300</p>
-        <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-        <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-      </div>
-    </div>
-
-
-    <div class="card">
-      <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-      <div class="card-body">
-      <h5 class="card-title">SPIDER-MAN 2</h5>
-      <p class="card-text">$2300</p>
-      <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-      <p class="mensaje-carrito" style="color:green; margin-top: 10px; display:none;">Producto agregado al carrito</p>
-    </div>
-  </div>
-</section>
-
-<!-- Modal -->
-<div id="productModal" class="hidden" 
-     style="position: fixed; top:0; left:0; width:100vw; height:100vh; 
-            background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;">
-
-  <div style="background:#fff; padding: 20px; border-radius: 8px; max-width: 400px; width: 90%; position: relative;">
-    <button onclick="cerrarModal()" 
-            style="position: absolute; top: 10px; right: 10px; background: transparent; border: none; font-size: 20px; cursor: pointer;">
-      &times;
-    </button>
-    <img id="modalImage" src="" alt="Producto" style="width: 100%; height: auto; margin-bottom: 1rem;">
-    <h2 id="modalName">Nombre Producto</h2>
-    <p id="modalPrice">$0.00</p>
-    <p id="modalDescription">Descripción corta o más info aquí</p>
-    <button onclick="agregarAlCarritoModal(); mostrarMensajeEnCardModal(this);">Agregar al carrito</button>
-
-    
-    <div id="mensajeCarrito" style="color: green; margin-top: 10px; display: none;">
-      Producto agregado al carrito
-    </div>
-  </div>
-</div>
-
-
-<!-- Sección de Reseñas -->
-<div class="container mt-5" id="reseñas">
-  <h2 class="mb-4">Reseñas de Nuestros Clientes</h2>
-  <div>
-    <div class="card">
-      <img src="/img/persona1.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 1" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Ana Pérez</h5>
-         <p class="card-text estrellas">
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">12 Mayo 2025</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/img/persona2.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 2" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Luis Gómez</h5>
-        <p class="card-text estrellas">
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella vacia">★</span>
-          <span class="estrella vacia">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">30 Abril 2025</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/img/persona3.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 3" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">María Ruiz</h5>
-        <p class="card-text estrellas">
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella vacia">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">5 Mayo 2025</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/img/persona4.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 4" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Carlos Martínez</h5>
-        <p class="card-text estrellas">
-          <span class="estrella llena"></span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella vacia">★</span>
-          <span class="estrella vacia">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">20 Abril 2025</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/img/persona5.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 5" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Sofía López</h5>
-        <p class="card-text estrellas">
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella vacia">★</span>
-          <span class="estrella vacia">★</span>
-          <span class="estrella vacia">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">10 Mayo 2025</small></p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="/img/persona6.avif" class="card-img-top rounded-circle mx-auto mt-3" alt="Cliente 6" style="width:80px; height:80px;">
-      <div class="card-body text-center">
-        <h5 class="card-title">Jorge Herrera</h5>
-        <p class="card-text estrellas">
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella llena">★</span>
-          <span class="estrella vacia">★</span>
-        </p>
-        <p class="card-text"><small class="text-muted">25 Abril 2025</small></p>
-      </div>
-    </div>
-  
-    </div>
-  </div>
-</div>
-
-  <!-- Sección de Contacto -->
-  <section id="contacto">
-    <div class="contacto-container" id="contacto">
-        <h1>Contacto</h1>
-        <p>Si tienes alguna pregunta o consulta, no dudes en escribirnos.</p>
-        <form action="https://formspree.io/f/xkgrnopl" method="POST">
-            <label>Nombre: <input type="text" id="name" name="name" required></label>
-            <label>Correo Electrónico: <input type="email" id="email" name="email" required></label>
-            <label>Mensaje: <textarea id="message" name="message" required></textarea></label>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-</section>
-<!-- FOOTER -->
-  <footer class="footer">
-  <div class="footer-container">
-    <!-- Columna izquierda: íconos -->
-    <div class="footer-left">
-      <h5>Síguenos en nuestras redes</h5>
-      <div class="social-icons">
-        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-
-    <!-- Columna derecha: menú independiente -->
-    <div class="footer-right">
-      <h5>Enlaces</h5>
-      <ul class="footer-menu">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="#">
+        <img src="/img/logo1.jpeg" alt="Logo">
+        <strong>Uniformes</strong>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="document.getElementById('navbarMenu').classList.toggle('open')">
+        ☰
+      </button>
+      <ul class="navbar-menu" id="navbarMenu">
         <li><a href="#">Inicio</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#reseñas">Reseñas</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+        <li>
+          <a href="#" id="carritoNav">
+            <i class="bi bi-cart"></i> <span id="cartCount">0</span>
+          </a>
+          <div id="resumenCarrito" class="hidden resumen-tarjeta">
+            <button class="btn-cerrar" onclick="cerrarResumen()" title="Cerrar resumen">
+              <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="resumen-header">
+              <span class="resumen-icon"><i class="bi bi-bag-check"></i></span>
+              <h3>Resumen de compra</h3>
+            </div>
+            <div id="listaProductos"></div>
+            <div class="resumen-totales">
+              <p id="subtotal"></p>
+              <p id="iva"></p>
+              <p id="total"></p>
+            </div>
+            <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+          </div>
+        </li>
       </ul>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <h1>Bienvenido a Uniformes Creativos</h1>
+    <p>Diseña y personaliza tus uniformes con estilo profesional.</p>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V-A8_svqz_s?si=RSI5AcnS_IRalDJ0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    &copy; 2025 RICHARDG91. Todos los derechos reservados.
-  </div>
-</footer>
+  <!-- PRODUCTOS -->
+  <section id="productos" class="container my-5">
+    <div class="productos-grid">
+      <!-- Repetimos el mismo producto 6 veces -->
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
+        <div class="card-body">
+          <h5 class="card-title">SPIDER-MAN 2</h5>
+          <p class="card-text">$2300</p>
+          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
+          <p class="mensaje-carrito">Producto agregado al carrito</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts.js" defer></script>
+  <!-- MODAL DE PRODUCTO -->
+  <div id="productModal" class="hidden">
+    <div>
+      <button onclick="cerrarModal()">&times;</button>
+      <img id="modalImage" src="" alt="Producto">
+      <h2 id="modalName">Nombre Producto</h2>
+      <p id="modalPrice">$0.00</p>
+      <p id="modalDescription">Descripción corta o más info aquí</p>
+      <button onclick="agregarAlCarritoModal()" class="btn btn-primary">Agregar al carrito</button>
+      <div id="mensajeCarrito">Producto agregado al carrito</div>
+    </div>
+  </div>
+
+  <!-- RESEÑAS -->
+  <div class="container mt-5" id="reseñas">
+    <h2>Reseñas de Nuestros Clientes</h2>
+    <div class="reseñas-grid">
+      <div class="card">
+        <img src="/img/persona1.avif" class="card-img-top" alt="Cliente 1">
+        <div class="card-body">
+          <h5 class="card-title">Ana Pérez</h5>
+          <p class="card-text estrellas">★★★★★</p>
+          <p class="card-text"><small>12 Mayo 2025</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/img/persona2.avif" class="card-img-top" alt="Cliente 2">
+        <div class="card-body">
+          <h5 class="card-title">Carlos Gómez</h5>
+          <p class="card-text estrellas">★★★★☆</p>
+          <p class="card-text"><small>5 Abril 2025</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/img/persona3.avif" class="card-img-top" alt="Cliente 3">
+        <div class="card-body">
+          <h5 class="card-title">Laura Torres</h5>
+          <p class="card-text estrellas">★★★★★</p>
+          <p class="card-text"><small>20 Marzo 2025</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/img/persona4.avif" class="card-img-top" alt="Cliente 4">
+        <div class="card-body">
+          <h5 class="card-title">Sofía Martínez</h5>
+          <p class="card-text estrellas">★★★★★</p>
+          <p class="card-text"><small>10 Febrero 2025</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/img/persona5.avif" class="card-img-top" alt="Cliente 5">
+        <div class="card-body">
+          <h5 class="card-title">Martín Díaz</h5>
+          <p class="card-text estrellas">★★★☆☆</p>
+          <p class="card-text"><small>28 Enero 2025</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/img/persona6.avif" class="card-img-top" alt="Cliente 6">
+        <div class="card-body">
+          <h5 class="card-title">Valentina Ruiz</h5>
+          <p class="card-text estrellas">★★★★☆</p>
+          <p class="card-text"><small>15 Enero 2025</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contacto-container">
+      <h1>Contacto</h1>
+      <p>Si tienes alguna pregunta o consulta, no dudes en escribirnos.</p>
+      <form action="https://formspree.io/f/xkgrnopl" method="POST">
+        <label>Nombre: <input type="text" name="name" required></label>
+        <label>Correo Electrónico: <input type="email" name="email" required></label>
+        <label>Mensaje: <textarea name="message" required></textarea></label>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <h5>Síguenos en nuestras redes</h5>
+        <div class="social-icons">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h5>Enlaces</h5>
+        <ul class="footer-menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#reseñas">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 RICHARDG91. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js" defer></script>
 </body>
 </html>
-

@@ -20,17 +20,23 @@ body {
   border-radius: 5px;
 }
 
-/* Producto */
+/* Contenedor de producto */
 .producto {
+  width: 180px;
+  margin: 60px auto;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
   text-align: center;
-  margin-top: 100px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Imagen del producto */
 .producto img {
-  width: 250px;
+  width: 100px;
   height: auto;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 10px;
   transition: transform 0.3s;
 }
 
@@ -38,27 +44,30 @@ body {
   transform: scale(1.05);
 }
 
+/* Título y precio */
 .producto .titulo {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 14px;
+  margin: 10px 0 5px;
 }
 
 .producto .precio {
-  color: #c40000;
+  font-size: 13px;
   font-weight: bold;
-  margin: 5px 0 10px;
+  color: #c40000;
+  margin-bottom: 10px;
 }
 
+/* Botón */
 .producto button {
-  padding: 10px 20px;
-  background-color: #444;
-  color: white;
+  font-size: 13px;
+  padding: 6px 12px;
   border: none;
   border-radius: 5px;
+  background: #444;
+  color: white;
   cursor: pointer;
 }
 
 .producto button:hover {
   background-color: #666;
 }
-
