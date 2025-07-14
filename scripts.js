@@ -38,14 +38,14 @@ fetch('productos.json')
         id: 1,
         nombre: "SPIDER-MAN 2",
         precio: 2300,
-        imagen: "img/carrusel1.jpg",
+        imagen: "img/uniforme2.jpg",
         descripcion: "Uniforme edición especial Spider-Man 2"
       },
       {
         id: 2,
         nombre: "BATMAN",
         precio: 2100,
-        imagen: "img/carrusel1.jpg",
+        imagen: "img/uniforme3.jpg",
         descripcion: "Uniforme edición especial Batman"
       }
     ];

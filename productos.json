@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "nombre": "SPIDER-MAN 2",
-    "precio": 2300,
-    "imagen": "img/carrusel1.jpg",
+    "nombre": "BUZO ESCOLAR",
+    "precio": 0,
+    "imagen": "img/uniforme1.jpg",
     "descripcion": "Uniforme edición especial Spider-Man 2"
   },
   {
     "id": 2,
-    "nombre": "BATMAN",
-    "precio": 2100,
-    "imagen": "img/carrusel1.jpg",
+    "nombre": "UNIFORMES CORPORATIVOS",
+    "precio": 0,
+    "imagen": "img/uniforme5.jpg",
     "descripcion": "Uniforme edición especial Batman"
   },
   {
