@@ -728,6 +728,12 @@ main {
     padding: 10px 20px;
     z-index: 999;
   }
+  @media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+}
+
 
   .navbar-menu.open {
     display: flex;
