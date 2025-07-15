@@ -24,7 +24,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#">  <!--navbar-brand ya no es dropdown -->
         <img src="/img/logo1.jpeg" alt="Logo">
         <strong>COFECCIONES AGAT</strong>
       </a>
@@ -33,7 +33,10 @@
       </button>
       <ul class="navbar-menu" id="navbarMenu">
         <li><a href="#">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
+        <li class="dropdown">  <!-- Productos ahora es dropdown -->
+          <a href="#productos">Productos</a>
+          <ul class="dropdown-menu"></ul>  <!-- Submenu dentro de Productos -->
+        </li>
         <li><a href="#reseñas">Reseñas</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li>
@@ -64,24 +67,68 @@
 <!-- CARRUSEL BANNER -->
   <section class="carousel-banner">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-  <div class="video-background">
-    <video autoplay muted loop>
-      <source src="/videos/7775762-uhd_4096_2160_25fps.webm" type="video/webm">
-      <source src="/videos/7775762-uhd_4096_2160_25fps (1).mp4" type="video/mp4">
-      <!-- Mensaje para navegadores que no soportan video -->
-      Tu navegador no soporta el elemento de video.
-    </video>
-  </div>
-  <div class="carousel-caption">
-    <h1>Bienvenido a Uniformes Creativos</h1>
-    <p>Diseña y personaliza tus uniformes con estilo profesional.</p>
-    </div>
-</div>
 
+      <div class="carousel-item active">  <!-- Primer slide (Video 1) -->
+        <div class="video-background">
+          <video autoplay muted loop>
+            <source src="/videos/7775762-uhd_4096_2160_25fps.webm" type="video/webm">
+            <source src="/videos/7775762-uhd_4096_2160_25fps (1).mp4" type="video/mp4">
+            <!-- Mensaje para navegadores que no soportan video -->
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        <div class="carousel-caption">
+          <h1>Bienvenido a Uniformes Creativos</h1>
+          <p>Diseña y personaliza tus uniformes con estilo profesional.</p>
+        </div>
       </div>
-      
-      
+
+      <div class="carousel-item">  <!-- Segundo slide (Video 2) -->
+        <div class="video-background">
+          <video autoplay muted loop>
+             <source src="/videos/corte y costura.webm" type="video/webm">
+            <source src="/videos/corte y costura.mp4" type="video/mp4">
+            <!-- Mensaje para navegadores que no soportan video -->
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        <div class="carousel-caption">
+          <h1>Proceso de Confección</h1>
+          <p>Calidad y detalle en cada paso.</p>
+        </div>
+      </div>
+
+      <div class="carousel-banner">  <!-- Tercer slide (Imagen 1) -->
+        <div class="video-background">
+          <video autoplay muted loop>
+             <source src="/videos/corte y costura.webm" type="video/webm">
+            <source src="/videos/corte y costura.mp4" type="video/mp4">
+            <!-- Mensaje para navegadores que no soportan video -->
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+
+      <div class="carousel-banner">  <!-- Cuarto slide (Imagen 2) -->
+        <div class="video-background">
+          <video autoplay muted loop>
+             <source src="/videos/corte y costura.webm" type="video/webm">
+            <source src="/videos/corte y costura.mp4" type="video/mp4">
+            <!-- Mensaje para navegadores que no soportan video -->
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+
+      <div class="carousel-banner">  <!-- Quinto slide (Imagen 3) -->
+        <div class="video-background">
+          <video autoplay muted loop>
+             <source src="/videos/corte y costura.webm" type="video/webm">
+            <source src="/videos/corte y costura.mp4" type="video/mp4">
+            <!-- Mensaje para navegadores que no soportan video -->
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+
+    </div>
 
       <!-- Controles de navegación del carrusel -->
       <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button> <!-- Botón anterior -->
@@ -89,249 +136,34 @@
     </section> <!-- Esta es la etiqueta de cierre correcta para toda la sección -->
 
   <!-- UNIFORMES -->
-  <section id="productos" class="container my-5">
-    <h2>Productos</h2> <!-- Añadido nuevamente -->
-    <div class="productos-grid">
-      <!-- Repetimos el mismo producto 6 veces -->
-      <div class="card">
-        <img src="img/uniforme2.jpeg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">BUZO PARA EL COLEGIO</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-    </div>
+  <section id="uniformes-escolares-y-corporativos" class="container my-5">
+  <h2>Uniformes Escolares y Corporativos</h2>
+  <div class="productos-grid">
+      <!-- El contenido de los productos se generará aquí por JavaScript -->
+  </div>
   </section>
 
   <!-- VESTUARIO PARA DANZA -->
-  <section id="productos" class="container my-5">
-    <h2>Productos</h2> <!-- Añadido nuevamente -->
-    <div class="productos-grid">
-      <!-- Repetimos el mismo producto 6 veces -->
-      <div class="card">
-        <img src="img/uniforme2.jpeg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">BUZO PARA EL COLEGIO</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-    </div>
+  <section id="vestuario-para-danza" class="container my-5">
+  <h2>Vestuario para Danza</h2>
+  <div class="productos-grid">
+      <!-- El contenido de los productos se generará aquí por JavaScript -->
+  </div>
   </section>
   <!-- INDUMENTARIA PARA DAMAS, CABALLEROS Y NIÑOS -->
-  <section id="productos" class="container my-5">
-    <h2>Productos</h2> <!-- Añadido nuevamente -->
-    <div class="productos-grid">
-      <!-- Repetimos el mismo producto 6 veces -->
-      <div class="card">
-        <img src="img/uniforme2.jpeg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">BUZO PARA EL COLEGIO</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-    </div>
+  <section id="indumentaria-para-damas-caballeros-y-ni-os" class="container my-5">
+  <h2>Indumentaria para Damas, Caballeros y Niños</h2>
+  <div class="productos-grid">
+      <!-- El contenido de los productos se generará aquí por JavaScript -->
+  </div>
   </section>
+
   <!-- ACCESORIOS -->
-  <section id="productos" class="container my-5">
-    <h2>Productos</h2> <!-- Añadido nuevamente -->
-    <div class="productos-grid">
-      <!-- Repetimos el mismo producto 6 veces -->
-      <div class="card">
-        <img src="img/uniforme2.jpeg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">BUZO PARA EL COLEGIO</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="img/carrusel1.jpg" class="card-img-top" alt="SPIDER-MAN 2">
-        <div class="card-body">
-          <h5 class="card-title">SPIDER-MAN 2</h5>
-          <p class="card-text">$2300</p>
-          <button class="btn btn-primary" onclick="abrirModal(this); mostrarMensajeEnCardModal(this)">Agregar al Carrito</button>
-          <p class="mensaje-carrito">Producto agregado al carrito</p>
-        </div>
-      </div>
-    </div>
+<section id="accesorios" class="container my-5">
+  <h2>Accesorios</h2>
+  <div class="productos-grid">
+      <!-- El contenido de los productos se generará aquí por JavaScript -->
+  </div>
   </section>
 
   <!-- MODAL DE PRODUCTO -->

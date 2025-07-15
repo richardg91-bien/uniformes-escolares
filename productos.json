@@ -2,29 +2,129 @@
   {
     "id": 1,
     "nombre": "BUZO ESCOLAR",
-    "precio": 0,
-    "imagen": "img/uniforme1.jpg",
-    "descripcion": "Uniforme edición especial Spider-Man 2"
+    "precio": 150.00,
+    "imagen": "img/uniforme2.jpeg",
+    "descripcion": "Buzo escolar cómodo y resistente",
+    "categoria": "Uniformes Escolares y Corporativos"
   },
   {
     "id": 2,
-    "nombre": "UNIFORMES CORPORATIVOS",
-    "precio": 0,
-    "imagen": "img/uniforme5.jpg",
-    "descripcion": "Uniforme edición especial Batman"
+    "nombre": "BUZO ESCOLAR",
+    "precio": 250.00,
+    "imagen": "img/uniforme3.jpeg",
+    "descripcion": "Conjunto de remeras, buzo y pantalón escolar",
+    "categoria": "Uniformes Escolares y Corporativos"
   },
   {
     "id": 3,
-    "nombre": "BATMAN",
-    "precio": 2100,
-    "imagen": "img/carrusel1.jpg",
-    "descripcion": "Uniforme edición especial Batman"
+    "nombre": "UNIFORME CORPORATIVO",
+    "precio": 250.00,
+    "imagen": "img/uniforme5.jpeg",
+    "descripcion": "Remeras corporativas",
+    "categoria": "Uniformes Escolares y Corporativos"
   },
   {
     "id": 4,
-    "nombre": "BATMAN",
-    "precio": 2100,
-    "imagen": "img/carrusel1.jpg",
-    "descripcion": "Uniforme edición especial Batman"
+    "nombre": "UNIFORME CORPORATIVO",
+    "precio": 180.00,
+    "imagen": "img/uniforme 7.jpeg",
+    "descripcion": "Elegante uniforme para empresas",
+    "categoria": "Uniformes Escolares y Corporativos"
+  },
+  {
+    "id": 5,
+    "nombre": "VESTIDO DANZA",
+    "precio": 90.00,
+    "imagen": "img/danza1.jpeg",
+    "descripcion": "Vestido para ballet",
+    "categoria": "Vestuario para Danza"
+  },
+  {
+    "id": 6,
+    "nombre": "VESTIDO DANZA",
+    "precio": 90.00,
+    "imagen": "img/danza2.jpeg",
+    "descripcion": "Vestido para ballet",
+    "categoria": "Vestuario para Danza"
+  },
+  {
+    "id": 7,
+    "nombre": "COMPLEMENTO DANZA",
+    "precio": 90.00,
+    "imagen": "img/accesorio14.jpeg",
+    "descripcion": "Zapatilla y lazo como conjunto",
+    "categoria": "Vestuario para Danza"
+  },
+  {
+    "id": 8,
+    "nombre": "VESTIDO DANZA",
+    "precio": 90.00,
+    "imagen": "img/DANZA25.jpeg",
+    "descripcion": "Conjunto para danza niña",
+    "categoria": "Vestuario para Danza"
+  },
+  {
+    "id": 9,
+    "nombre": "INDUMENTARIA PARA NIÑO",
+    "precio": 120.00,
+    "imagen": "img/ropa1.jpeg",
+    "descripcion": "Conjunto para niño",
+    "categoria": "Indumentaria para Damas, Caballeros y Niños"
+  },
+  {
+    "id": 10,
+    "nombre": "INDUMENTARIA PARA NIÑA",
+    "precio": 100.00,
+    "imagen": "img/ropa2.jpeg",
+    "descripcion": "Bata para niño",
+    "categoria": "Indumentaria para Damas, Caballeros y Niños"
+  },
+  {
+    "id": 11,
+    "nombre": "INDUMENTARIA PARA NIÑO",
+    "precio": 40.00,
+    "imagen": "img/ropa4.jpeg",
+    "descripcion": "Disfraz para niña campanita",
+    "categoria": "Indumentaria para Damas, Caballeros y Niños"
+  },
+  {
+    "id": 12,
+    "nombre": "BATA CASERA",
+    "precio": 40.00,
+    "imagen": "img/INDUMENTARIA24.jpeg",
+    "descripcion": "Bata casera para adultos",
+    "categoria": "Indumentaria para Damas, Caballeros y Niños"
+  },
+  {
+    "id": 13,
+    "nombre": "CUELLOS",
+    "precio": 40.00,
+    "imagen": "img/accesorio2.jpeg",
+    "descripcion": "Cuellos para invierno",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 14,
+    "nombre": "COLITAS PARA NIÑAS",
+    "precio": 40.00,
+    "imagen": "img/accesorio4.jpeg",
+    "descripcion": "colitas para niña colores patrios",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 15,
+    "nombre": "VARIOS",
+    "precio": 30.00,
+    "imagen": "img/accesorio5.jpeg",
+    "descripcion": "Accesorios dias de la patria",
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 16,
+    "nombre": "GORRO PARA INVIERNO",
+    "precio": 30.00,
+    "imagen": "img/accesorio15.jpeg",
+    "descripcion": "Gorro cómodo para el frío",
+    "categoria": "Accesorios"
   }
 ]

@@ -2,8 +2,7 @@
 /*        ESTILOS BASE          */
 /* ============================ */
 body {
-  background: linear-gradient(to bottom right, #28a745, #ffd700);
-  font-family: Arial, sans-serif;
+  background:  linear-gradient(to bottom right, #ffffff, #b5aaaa); /* Degradado de blanco a gris muy claro */
   margin: 0;
   padding: 0;
   display: flex;
@@ -30,7 +29,9 @@ main {
   background-color: #ffffff;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: relative; /* Añadir posicionamiento relativo para el menú absoluto */
+  position: sticky; /* Cambiado a sticky */
+  top: 0; /* Se pega a la parte superior */
+  z-index: 1020; /* Asegura que esté por encima del contenido */
 }
 .navbar-nav .nav-link:hover {
   color: #ffd700;
@@ -109,37 +110,36 @@ main {
 /* ============================ */
 /*        CARRUSEL BANNER       */
 /* ============================ */
-/* ============================ */
-/*        CARRUSEL BANNER       */
-/* ============================ */
 .carousel-banner {
   position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 60px;
-  /* Definir altura relativa a la ventana */
   height: 70vh; /* Ejemplo: 70% de la altura de la ventana */
+  /* background-color: #f8f9fa;  Eliminar el fondo temporal */
 }
-
-/* ... el resto de estilos del carrusel ... */
-
-
 
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease-in-out; /* Transición para el cambio de slide */
+  height: 100%; /* Asegura que ocupe la altura del contenedor */
 }
 
 .carousel-item {
   min-width: 100%; /* Cada slide ocupa el 100% del ancho del carrusel */
   position: relative;
+  height: 100%; /* Asegura que ocupe la altura del contenedor */
+  display: flex; /* Usar flexbox para centrar contenido si es necesario */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  overflow: hidden; /* Ocultar cualquier parte del contenido que se desborde */
 }
 
 .carousel-item img,
 .carousel-item video {
   display: block;
-  width: 100%;
-  height: auto; /* O height: 100vh; para que ocupe toda la altura de la ventana */
+  width: 100%; /* Ocupar el ancho del contenedor */
+  height: 100%; /* Ocupar el alto del contenedor */
   object-fit: cover; /* Asegura que la imagen o video cubra el área */
 }
 
@@ -151,10 +151,22 @@ main {
   color: #fff; /* Color del texto */
   text-align: center;
   z-index: 1; /* Asegurar que el texto esté por encima de la imagen/video */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+  padding: 10px 20px; /* Añadir padding al texto */
+  border-radius: 5px; /* Bordes redondeados */
 }
 
 
 
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ocultar cualquier parte del video que se desborde */
+}
 
 .video-background video {
   min-width: 100%;
@@ -165,7 +177,10 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* Asegurarse de que el video de fondo cubra el contenedor */
+  object-fit: cover;
 }
+
 
 /* Estilos para los controles de navegación del carrusel */
 .carousel-control {
@@ -195,13 +210,45 @@ main {
   right: 10px; /* Posicionar a la derecha */
 }
 
-/* ... resto de secciones de CSS ... */
+/* Estilos para el submenú (inicialmente oculto) */
+.dropdown-menu {
+  display: none; /* Ocultar el submenú por defecto */
+  position: absolute;
+  top: 100%; /* Posicionar debajo del elemento padre */
+  left: 0;
+  background-color: #fff; /* Fondo del submenú */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 180px; /* Ancho mínimo del submenú */
+  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8f9fa; /* Fondo al pasar el ratón */
+}
+
+/* Clase para mostrar el submenú */
+.dropdown-menu.visible {
+  display: block;
+}
 
 
 /* ============================ */
 /*        CARDS DE PRODUCTO     */
 /* ============================ */
-#productos h2 {
+#uniformes-escolares-y-corporativos h2,
+#vestuario-para-danza h2,
+#indumentaria-para-damas-caballeros-y-ni-os h2,
+#accesorios h2 {
   text-align: center;
   margin-bottom: 20px; /* Espacio entre el subtítulo y la cuadrícula de productos */
   color: #333; /* Color del texto */
@@ -397,7 +444,7 @@ main {
 }
 
 .resumen-tarjeta:not(.hidden) {
-  display: block; /* Mostrar cuando no tenga la clase 'hidden' */
+  display: block; /* Mostrar cuando no tenga la clase \'hidden\' */
 }
 
 .resumen-header {
@@ -558,8 +605,8 @@ main {
 /*        FOOTER                */
 /* ============================ */
 .footer {
-  background: #050505;
-  color: #64748b;
+  background: #9a8888;
+  color: #0b0c0c;
   padding: 32px 0 12px 0;
   border-top: 1px solid #e0e7ef;
   font-size: 1rem;
@@ -594,7 +641,7 @@ main {
 }
 
 .social-icons a {
-  color: #ec0b0b;
+  color: #0c0c0c;
   text-decoration: none;
   margin-bottom: 10px;
   font-size: 18px;
@@ -615,7 +662,7 @@ main {
 }
 
 .footer-menu a {
-  color: #f20202;
+  color: #040404;
   text-decoration: none;
   text-align: right;
 }
