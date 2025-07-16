@@ -446,6 +446,11 @@ function showSlide(index) {
     currentIndex = index;
   }
 
+  // Ocultar todos los captions primero
+  document.querySelectorAll('.carousel-caption').forEach(caption => {
+    caption.style.display = 'none';
+  });
+
   const offset = -currentIndex * 100; // Calcular el desplazamiento para mostrar el slide correcto
   carouselInner.style.transform = `translateX(${offset}%)`;
 
@@ -454,6 +459,11 @@ function showSlide(index) {
     if (i === currentIndex) {
       item.classList.add('active');
     } else {
+      // Mostrar el caption del slide activo
+      const activeCaption = item.querySelector('.carousel-caption');
+      if (activeCaption) {
+        activeCaption.style.display = 'block'; // O el display original que uses
+      }
       item.classList.remove('active');
     }
   });
