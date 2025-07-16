@@ -728,12 +728,6 @@ main {
     padding: 10px 20px;
     z-index: 999;
   }
-  @media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
-  }
-}
-
 
   .navbar-menu.open {
     display: flex;
@@ -772,5 +766,20 @@ main {
 
   .navbar-nav .nav-item {
     margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    bottom: 10px;
+    background-repeat: no-repeat;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .carousel-banner {
+    height: 50vh;
   }
 }
