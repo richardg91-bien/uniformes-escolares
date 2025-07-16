@@ -792,6 +792,23 @@ main {
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
 
+  /* Ensure video/image covers container and is not distorted on mobile */
+  .carousel-item img,
+  .carousel-item video {
+    width: 100% !important; /* Ensure full width */
+    height: 100% !important; /* Ensure full height */
+    object-fit: cover !important; /* Ensure it covers and is not distorted */
+  }
+
+  /* Ensure video-background also covers its area */
+  .video-background {
+     width: 100% !important;
+     height: 100% !important;
+     overflow: hidden !important;
+  }
+
+
+
   /* Adjust font size and line height for text elements within caption on mobile */
   .carousel-caption h1 {
     font-size: 1em; /* Tamaño relativo al font-size del caption (0.7rem) */
