@@ -116,7 +116,7 @@ main {
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.3s ease-in-out; /* Transición para el cambio de slide */
+  transition: transform 0.8s ease-in-out; /* Aumentar la duración de la transición */
   height: 100%; /* Asegura que ocupe la altura del contenedor */
 }
 
