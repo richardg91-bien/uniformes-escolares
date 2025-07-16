@@ -778,6 +778,8 @@ main {
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 300px; /* Define un ancho máximo para el caption */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
   .carousel-banner {
     height: 50vh;
