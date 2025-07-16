@@ -791,5 +791,17 @@ main {
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
 
+  /* Adjust font size and line height for text elements within caption on mobile */
+  .carousel-caption h1 {
+    font-size: 1em; /* Tamaño relativo al font-size del caption (0.7rem) */
+    line-height: 1.1; /* Reducir altura de línea para h1 */
+    margin-bottom: 2px; /* Reducir margen inferior para separar de la p */
+  }
+
+  .carousel-caption p {
+    font-size: 0.9em; /* Tamaño relativo al font-size del caption (0.7rem) */
+    line-height: 1.2; /* Ajustar altura de línea para p */
+  }
+
 }
 
