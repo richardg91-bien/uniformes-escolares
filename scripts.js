@@ -446,12 +446,8 @@ function showSlide(index) {
     currentIndex = index;
   }
 
-  // Ocultar todos los captions primero
-  // Ahora usamos opacity y pointer-events en lugar de display
-  document.querySelectorAll('.carousel-caption').forEach(caption => {
-    caption.style.opacity = '0';
-    caption.style.pointerEvents = 'none'; // Deshabilitar interacciones del ratón/tacto
-  });
+  // La visibilidad de los captions ahora se maneja completamente con CSS y la clase 'active'
+  // Se eliminó el código JavaScript que manipulaba directamente la opacidad y pointer-events.
 
   const offset = -currentIndex * 100;
   carouselInner.style.transform = `translateX(${offset}%)`;
@@ -460,16 +456,13 @@ function showSlide(index) {
   carouselItems.forEach((item, i) => {
     if (i === currentIndex) {
       item.classList.add('active');
+      // Ya no manipulamos la opacidad o pointer-events aquí con JavaScript
     } else {
-      // Mostrar el caption del slide activo
-      const activeCaption = item.querySelector('.carousel-caption');
-      if (activeCaption) {
-        activeCaption.style.display = 'block'; // O el display original que uses
-      }
       item.classList.remove('active');
     }
   });
 }
+
 
 // Funciones para botones de navegación (si los añades en HTML)
 function nextSlide() {
