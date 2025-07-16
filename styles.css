@@ -354,8 +354,7 @@ main {
   z-index: 9999;
 }
 
-#productModal:not(.hidden) {
-  display: flex;
+#productModal:not(.hidden) {  display: flex;
 }
 
 #productModal > div {
@@ -452,8 +451,7 @@ main {
   display: none; /* Ocultar por defecto */
 }
 
-.resumen-tarjeta:not(.hidden) {
-  display: block; /* Mostrar cuando no tenga la clase \'hidden\' */
+.resumen-tarjeta:not(.hidden) {  display: block; /* Mostrar cuando no tenga la clase \'hidden\' */
 }
 
 .resumen-header {
@@ -631,11 +629,17 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start; /* Alinea los elementos al inicio de la fila por defecto */
+  flex-direction: row; /* En escritorio, los elementos están en fila */
 }
 
-.footer-left,
-.footer-right {
+.footer-left {
   margin: 10px;
+  text-align: left; /* Alinear texto a la izquierda por defecto */
+}
+
+.footer-right {
+ margin: 10px;
 }
 
 .footer h5 {
@@ -643,17 +647,21 @@ main {
   font-size: 16px;
 }
 
+.footer-left h5 {
+  min-height: 1rem; /* Añadir min-height si necesitas que ocupe espacio vacío */
+}
+
 .social-icons {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: column; /* Por defecto, apilar en columna */
+  align-items: flex-start; /* Alinear iconos al inicio */
 }
 
 .social-icons a {
   color: #0c0c0c;
   text-decoration: none;
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 10px; /* Espacio entre iconos apilados */
+  font-size: 18px; /* Tamaño de los iconos */
 }
 
 .social-icons a:hover {
@@ -688,12 +696,35 @@ main {
   font-size: 14px;
 }
 
+/* Estilos para el contenedor del Código QR en el footer */
+.qr-container {
+  display: flex; /* Usar flexbox para centrar su contenido */
+  flex-direction: column; /* Apilar contenido (QR y subtítulo) */
+  align-items: center; /* Centrar contenido horizontalmente */
+  flex-basis: auto; /* Permite que el contenedor del QR ajuste su tamaño */
+  margin: 20px 0; /* Añadir margen superior e inferior */
+}
+
+/* Estilos para el subtítulo debajo del Código QR */
+.qr-container h6 {
+  font-size: 1.2em; /* Aumentar el tamaño de fuente del subtítulo */
+  margin-top: 10px; /* Añadir espacio encima del subtítulo */
+  color: #333; /* Color del subtítulo, ajusta si es necesario */
+}
+
+/* Estilos para la imagen del Código QR */
+.qr-code {
+  width: 150px; /* Tamaño del código QR */
+  height: auto; /* Mantener relación de aspecto */
+  max-width: 100%; /* Asegurar que no se desborde en contenedores pequeños */
+}
+
+
 /* ============================ */
 /* MEDIA QUERIES (RESPONSIVE)   */
 /* ============================ */
 @media (max-width: 900px) {
-  .footer-container {
-    flex-direction: column;
+  .footer-container { /* Existing rule - modify */
     gap: 1.2rem;
     align-items: flex-start;
   }
@@ -781,13 +812,16 @@ main {
 @media (max-width: 768px) {
   /* Responsive adjustments for caption */
   .carousel-caption {
+    z-index: 2; /* Ensure active caption is on top */
+  }
+  .carousel-caption {
+
     font-size: 0.7rem; /* Reducir ligeramente más el tamaño de fuente */
     padding: 4px 8px; /* Reducir padding */
     bottom: 10px; /* Ajustar posición inferior */
     width: 95%; /* Permitir que ocupe un poco más de ancho */
     max-width: none; /* Eliminar max-width para que ocupe el 95% */
     line-height: 1.2; /* Ajustar altura de línea */
-    max-width: 300px; /* Define un ancho máximo para el caption */
  margin-bottom: 5px; /* Añadir margen inferior */
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
@@ -817,7 +851,7 @@ main {
   }
 
   .carousel-caption p {
-    font-size: 0.9em; /* Tamaño relativo al font-size del caption (0.7rem) */
+    font-size: 0.9em; /* Tamaño relativo al font-size del caption (0.9em) */
     line-height: 1.2; /* Ajustar altura de línea para p */
   }
  /* Temporarily disable carousel transition on mobile for testing */
@@ -828,5 +862,63 @@ main {
  .carousel-banner {
  height: 50vh; /* Ajustar la altura del banner en móviles si es necesario */
  }
-}
 
+  /* Adjust the layout of the footer in the media query for mobile */
+  .footer-container { /* Existing rule - modify */
+ flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-left { /* Existing rule - modify */
+    order: 1; /* Poner redes sociales primero */
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .qr-container { /* Existing rule - modify */
+    order: 2; /* Poner QR en el medio */
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-right { /* Existing rule - modify */
+    order: 3; /* Poner enlaces al final */
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-left,\n  .footer-right,\n  .qr-container { /* New rule */
+    /* These properties are now defined in the specific rules above */
+    /* margin: 10px 0; */
+    text-align: center; /* Center text in left/right if needed */
+  }
+   .social-icons { /* New rule */
+ display: flex;
+    flex-direction: row; /* Show icons in a row on mobile */
+ justify-content: center;
+    gap: 15px; /* Space between icons */
+    width: 100%; /* Ensure it takes full width for centering */
+   }
+\n   .social-icons a { /* New rule */
+ margin: 0;
+     color: #0c0c0c; /* Ensure icon color is visible */
+     font-size: 24px; /* Increase icon size */
+   }
+\n   .footer-menu { /* New rule */
+ align-items: center;
+ padding: 0;
+   }
+\n   .footer-menu li { /* New rule */
+ margin-bottom: 8px;
+   }
+\n   .qr-code { /* New rule */
+ width: 120px;
+   }
+\n   .qr-container h6 { /* New rule */
+ font-size: 1em;
+   }
+}
