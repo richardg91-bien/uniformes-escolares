@@ -771,9 +771,9 @@ main {
 
 @media (max-width: 768px) {
   .carousel-caption {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    bottom: 10px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    bottom: 15px;
     background-repeat: no-repeat;
     width: 90%;
     left: 50%;
