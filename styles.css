@@ -244,6 +244,12 @@ main {
   pointer-events: auto; /* Enable interactions when active */
 }
 
+/* Style for active slide (ensure it's above inactive slides) */
+.carousel-item.active {
+  z-index: 2; /* Ensure active slide is on top */
+}
+
+
 
 /* ============================ */
 /*        CARDS DE PRODUCTO     */
@@ -775,10 +781,12 @@ main {
 @media (max-width: 768px) {
   /* Responsive adjustments for caption */
   .carousel-caption {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    bottom: 15px;
-    width: 90%;
+    font-size: 0.7rem; /* Reducir ligeramente más el tamaño de fuente */
+    padding: 4px 8px; /* Reducir padding */
+    bottom: 10px; /* Ajustar posición inferior */
+    width: 95%; /* Permitir que ocupe un poco más de ancho */
+    max-width: none; /* Eliminar max-width para que ocupe el 95% */
+    line-height: 1.2; /* Ajustar altura de línea */
     max-width: 300px; /* Define un ancho máximo para el caption */
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
