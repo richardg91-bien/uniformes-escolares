@@ -788,6 +788,7 @@ main {
     max-width: none; /* Eliminar max-width para que ocupe el 95% */
     line-height: 1.2; /* Ajustar altura de línea */
     max-width: 300px; /* Define un ancho máximo para el caption */
+ margin-bottom: 5px; /* Añadir margen inferior */
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
   }
 
@@ -802,6 +803,13 @@ main {
     font-size: 0.9em; /* Tamaño relativo al font-size del caption (0.7rem) */
     line-height: 1.2; /* Ajustar altura de línea para p */
   }
+ /* Temporarily disable carousel transition on mobile for testing */
+ .carousel-inner {
+ transition: none !important; /* Desactivar la transición */
+ }
 
+ .carousel-banner {
+ height: 50vh; /* Ajustar la altura del banner en móviles si es necesario */
+ }
 }
 
