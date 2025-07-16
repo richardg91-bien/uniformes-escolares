@@ -447,11 +447,13 @@ function showSlide(index) {
   }
 
   // Ocultar todos los captions primero
+  // Ahora usamos opacity y pointer-events en lugar de display
   document.querySelectorAll('.carousel-caption').forEach(caption => {
-    caption.style.display = 'none';
+    caption.style.opacity = '0';
+    caption.style.pointerEvents = 'none'; // Deshabilitar interacciones del ratón/tacto
   });
 
-  const offset = -currentIndex * 100; // Calcular el desplazamiento para mostrar el slide correcto
+  const offset = -currentIndex * 100;
   carouselInner.style.transform = `translateX(${offset}%)`;
 
   // Opcional: Actualizar clases 'active' si las usas para estilos o indicadores
